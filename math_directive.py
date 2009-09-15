@@ -26,4 +26,4 @@ def math_jsmath_role(name, rawtext, text, lineno, inliner, options={},
                       format='html'
             )], []
 
-roles.register_role('math', math_jsmath_role)
+roles.register_canonical_role('math', math_jsmath_role)
