@@ -12,6 +12,8 @@ def math_jsmath_directive(name, arguments, options, content, lineno,
     format = '\\[%s\\]'
     return [nodes.raw("", format % '\n'.join(content), format='html')]
 
+directives.register_directive('math', math_jsmath_directive)
+
 def math_jsmath_role(name, rawtext, text, lineno, inliner, options={}, 
                      content=[]):
     """
@@ -24,3 +26,4 @@ def math_jsmath_role(name, rawtext, text, lineno, inliner, options={},
                       format='html'
             )], []
 
+roles.register_role('math', math_jsmath_role)
