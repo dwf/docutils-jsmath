@@ -20,6 +20,7 @@ def math_jsmath_role(name, rawtext, text, lineno, inliner, options={},
     Provides a role for docutils to pick up and convert to jsMath syntax.
     """
     format = "\\(%s\\)"
+    rawtext = rawtext.split(':')[1]
     return [nodes.raw(
                       rawtext, 
                       format % rawtext.strip('`').replace(r'\\\\', r'\\'),
